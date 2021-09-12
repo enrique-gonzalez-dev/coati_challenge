@@ -1,10 +1,15 @@
 <div class="collapse" id="navbarToggleExternalContent">
-  <div class="bg-dark p-4">
-    <h5 class="text-white h4">Collapsed content</h5>
-    <span class="text-muted">Toggleable via the navbar brand.</span>
+  <div class="bg-light p-4">
+    <% if user_signed_in? %>
+      Iniciaste sesión como:  <strong><%= current_user.email %></strong>.
+      <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% else %>
+      <%= link_to "Registrate", new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Iniciar sesión", new_user_session_path, :class => 'navbar-link'  %>
+    <% end %>
   </div>
 </div>
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
