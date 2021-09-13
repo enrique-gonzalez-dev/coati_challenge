@@ -2,8 +2,8 @@
 
 one:
   total_items: 1
-  transtaction_amount: 1.5
+  transaction_amount: 1.5
 
 two:
   total_items: 1
-  transtaction_amount: 1.5
+  transaction_amount: 1.5

@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_09_13_163703) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer "total_items"
-    t.float "transtaction_amount"
+    t.float "transaction_amount"
     t.integer "client_id"
     t.integer "seller_id"
     t.integer "product_id"

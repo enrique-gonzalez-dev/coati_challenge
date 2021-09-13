@@ -1,29 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Tickets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Total items</th>
-      <th>Transtaction amount</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tickets.each do |ticket| %>
+<div class="card-header">
+  <h4>Tickets</h4>
+</div>
+<div class="card-body">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= ticket.total_items %></td>
-        <td><%= ticket.transtaction_amount %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Client</th>
+        <th>Item description</th>
+        <th>Item cost</th>
+        <th>Total items</th>
+        <th>Seller address</th>
+        <th>Seller</th>
+        <th>Transaction amount</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+  
+    <tbody>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= Client.find(ticket.client_id).name %></td>
+          <td><%= Product.find(ticket.product_id).description %></td>
+          <td><%= Product.find(ticket.product_id).cost %></td>
+          <td><%= ticket.total_items %></td>
+          <td><%= Seller.find(ticket.seller_id).address %></td>
+          <td><%= Seller.find(ticket.seller_id).name %></td>
+          <td><%= ticket.transaction_amount %></td>
+          <td><%= link_to 'Show', ticket %></td>
+          <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+          <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<br>
 
-<%= link_to 'New Ticket', new_ticket_path %>
+

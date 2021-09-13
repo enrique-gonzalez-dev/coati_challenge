@@ -1,5 +1,7 @@
 class SellersController < ApplicationController
   before_action :set_seller, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
+  protect_from_forgery with: :exception
 
   # GET /sellers or /sellers.json
   def index

@@ -1,0 +1,12 @@
+
+<div class="card-header">
+  <h2>Importar</h2>
+</div>
+<div class="card-body">
+  <%= form_for(:ticket, :url => {:action=>'import'}, :html=> {:multipart=>true}) do |f| %>
+    <%= f.label 'Sellecciona el archivo para importar ventas' %><br />
+    <%= f.file_field :import_file, class: "form-control my-2" %>
+    <%= f.submit 'Cargar', class: "btn btn-outline-success" %>
+  <% end %>
+</div>
+

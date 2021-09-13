@@ -15,7 +15,7 @@ class TicketsTest < ApplicationSystemTestCase
     click_on "New Ticket"
 
     fill_in "Total items", with: @ticket.total_items
-    fill_in "Transtaction amount", with: @ticket.transtaction_amount
+    fill_in "Transtaction amount", with: @ticket.transaction_amount
     click_on "Create Ticket"
 
     assert_text "Ticket was successfully created"
@@ -27,7 +27,7 @@ class TicketsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Total items", with: @ticket.total_items
-    fill_in "Transtaction amount", with: @ticket.transtaction_amount
+    fill_in "Transtaction amount", with: @ticket.transaction_amount
     click_on "Update Ticket"
 
     assert_text "Ticket was successfully updated"

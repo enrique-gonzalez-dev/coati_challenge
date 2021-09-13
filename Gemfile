@@ -11,6 +11,9 @@ gem 'sqlite3', '~> 1.4'
 #Use devise for auth
 gem 'devise'
 
+#Use gem 'fastest-csv' from analize file .tab
+gem 'fastest-csv'
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
