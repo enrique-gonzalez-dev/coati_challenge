@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Total items:</strong>
+  <%= @ticket.total_items %>
+</p>
+
+<p>
+  <strong>Transtaction amount:</strong>
+  <%= @ticket.transtaction_amount %>
+</p>
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>
